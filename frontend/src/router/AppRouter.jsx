@@ -1,0 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import MainLayout from "../layouts/MainLayout";
+
+import Dashboard from "../pages/Dashboard";
+import Notes from "../pages/Notes";
+import Questions from "../pages/Questions";
+import Flashcards from "../pages/Flashcards";
+import AI from "../pages/AI";
+import Settings from "../pages/Settings";
+
+export default function AppRouter() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<MainLayout />}>
+                    <Route index element={<Dashboard />} />
+                    <Route path="notes" element={<Notes />} />
+                    <Route path="questions" element={<Questions />} />
+                    <Route path="flashcards" element={<Flashcards />} />
+                    <Route path="ai" element={<AI />} />
+                    <Route path="settings" element={<Settings />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
+}
