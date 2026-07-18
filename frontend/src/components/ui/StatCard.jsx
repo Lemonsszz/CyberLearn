@@ -3,9 +3,11 @@ import Card from "./Card";
 export default function StatCard({ title, value }) {
     return (
         <Card>
-            <p className="text-gray-500">{title}</p>
+            <p className="text-slate-400 text-sm">
+                {title}
+            </p>
 
-            <h2 className="text-3xl font-bold mt-2">
+            <h2 className="mt-3 text-3xl font-bold text-white">
                 {value}
             </h2>
         </Card>
