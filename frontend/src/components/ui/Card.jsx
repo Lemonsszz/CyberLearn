@@ -1,7 +1,15 @@
-export default function Card({ children, className = "" }) {
+import clsx from "clsx";
+
+export default function Card({
+    children,
+    className
+}) {
     return (
         <div
-            className={`bg-white rounded-xl shadow-md p-6 ${className}`}
+            className={clsx(
+                "rounded-xl border border-slate-700 bg-slate-900 p-6 shadow-lg",
+                className
+            )}
         >
             {children}
         </div>
