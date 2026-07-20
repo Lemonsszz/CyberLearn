@@ -11,10 +11,18 @@ export async function getWorkspaces() {
     return data;
 }
 
-export async function createWorkspace(workspace) {
+
+export async function createWorkspace(name) {
+
     const { data, error } = await supabase
         .from("workspaces")
-        .insert(workspace)
+        .insert([
+            {
+                name: name,
+                color: "#7C3AED",
+                icon: "📚"
+            }
+        ])
         .select();
 
     if (error) throw error;
