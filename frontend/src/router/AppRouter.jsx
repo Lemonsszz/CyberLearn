@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
-
+import TestSupabase from "../pages/TestSupabase";
 import Dashboard from "../pages/Dashboard";
 import Notes from "../pages/Notes";
 import Questions from "../pages/Questions";
@@ -14,7 +14,7 @@ export default function AppRouter() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLayout />}>
-                    <Route index element={<Dashboard />} />
+                    <Route index element={<TestSupabase />} />
                     <Route path="notes" element={<Notes />} />
                     <Route path="questions" element={<Questions />} />
                     <Route path="flashcards" element={<Flashcards />} />
