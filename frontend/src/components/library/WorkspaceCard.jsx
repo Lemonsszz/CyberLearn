@@ -1,8 +1,12 @@
 import Card from "../ui/Card";
-
+import { useNavigate } from "react-router-dom";
 export default function WorkspaceCard({ workspace }) {
+    const navigate = useNavigate();
     return (
-        <Card className="cursor-pointer hover:scale-[1.02] transition-all">
+        <Card
+        className="cursor-pointer hover:scale-[1.02] transition-all"
+        onClick={() => navigate(`/workspace/${workspace.id}`)}
+        >
             <h2 className="text-xl font-semibold text-white">
                 {workspace.name}
             </h2>

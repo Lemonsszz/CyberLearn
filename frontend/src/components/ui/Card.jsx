@@ -2,7 +2,8 @@ import clsx from "clsx";
 
 export default function Card({
     children,
-    className
+    className,
+    ...props
 }) {
     return (
         <div
@@ -10,6 +11,7 @@ export default function Card({
                 "rounded-xl border border-slate-700 bg-slate-900 p-6 shadow-lg",
                 className
             )}
+            {...props}
         >
             {children}
         </div>
