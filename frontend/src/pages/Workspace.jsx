@@ -7,6 +7,7 @@ import ModuleList from "../components/modules/ModuleList";
 import ModuleHeader from "../components/modules/ModuleHeader";
 import { createModule } from "../services/moduleService";
 import ModuleModal from "../components/modules/ModuleModal";
+import PageHeader from "../components/layout/PageHeader";
 
 export default function Workspace() {
 
@@ -15,6 +16,8 @@ export default function Workspace() {
     const [openModal, setOpenModal] = useState(false);
     const [workspace, setWorkspace] = useState(null);
     const [modules, setModules] = useState([]);
+
+
     useEffect(() => {
 
         loadWorkspace();
@@ -54,15 +57,16 @@ export default function Workspace() {
     return (
         <div className="p-8 text-white">
 
-            <h1 className="text-4xl font-bold text-white">
-            {workspace.icon} {workspace.name}
-            </h1>
-            <p className="text-slate-400 mt-2">
-                Organiza tus módulos de estudio.
-            </p>
-            <ModuleHeader
-            onCreate={() => setOpenModal(true)}
-            />
+                <PageHeader
+                title={`${workspace.icon} ${workspace.name}`}
+                subtitle="Organiza tus módulos de estudio."
+                action={
+                <ModuleHeader
+                onCreate={() => setOpenModal(true)}
+                    />
+                }
+                />
+        
 
             <ModuleList
                 modules={modules}

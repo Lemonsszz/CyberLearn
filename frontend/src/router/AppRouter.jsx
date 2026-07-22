@@ -10,6 +10,9 @@ import AI from "../pages/AI";
 import Settings from "../pages/Settings";
 import Library from "../pages/Library";
 import Workspace from "../pages/Workspace";
+import Module from "../pages/Module";
+import Note from "../pages/Note";
+
 export default function AppRouter() {
     return (
         <BrowserRouter>
@@ -18,6 +21,8 @@ export default function AppRouter() {
                     <Route index element={<TestSupabase />} />
                     <Route path="notes" element={<Library />} />
                     <Route path="workspace/:id" element={<Workspace />} />
+                    <Route path="module/:id" element={<Module />} />
+                    <Route path="note/:id" element={<Note />} />
                     <Route path="questions" element={<Questions />} />
                     <Route path="flashcards" element={<Flashcards />} />
                     <Route path="ai" element={<AI />} />
